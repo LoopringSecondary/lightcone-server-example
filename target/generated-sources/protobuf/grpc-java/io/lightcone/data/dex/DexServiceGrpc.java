@@ -18,7 +18,7 @@ public class DexServiceGrpc {
 
   private DexServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "io.lightcone.data.dex.DexServiceImpl";
+  public static final String SERVICE_NAME = "io.lightcone.data.dex.DexService";
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi
@@ -27,7 +27,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "getDexConfigurations"),
+              "io.lightcone.data.dex.DexService", "getDexConfigurations"),
           io.grpc.protobuf.ProtoUtils.marshaller(com.google.protobuf.Empty.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.DexConfigurations.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -36,7 +36,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "getTokens"),
+              "io.lightcone.data.dex.DexService", "getTokens"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetTokensReq.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetTokensRes.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -45,7 +45,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "getMarkets"),
+              "io.lightcone.data.dex.DexService", "getMarkets"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetMarketsReq.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetMarketsRes.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -54,7 +54,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "getMarketFills"),
+              "io.lightcone.data.dex.DexService", "getMarketFills"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetMarketFillsReq.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetFillsRes.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -63,7 +63,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "getOrderBook"),
+              "io.lightcone.data.dex.DexService", "getOrderBook"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetOrderBookReq.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.OrderBook.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -72,7 +72,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "getCandles"),
+              "io.lightcone.data.dex.DexService", "getCandles"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetCandlesReq.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.Candles.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -81,7 +81,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "getAccount"),
+              "io.lightcone.data.dex.DexService", "getAccount"),
           io.grpc.protobuf.ProtoUtils.marshaller(com.google.protobuf.StringValue.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.Account.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -90,7 +90,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "getUserOrders"),
+              "io.lightcone.data.dex.DexService", "getUserOrders"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetUserOrdersReq.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetUserOrdersRes.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -99,7 +99,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "getUserFills"),
+              "io.lightcone.data.dex.DexService", "getUserFills"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetUserFillsReq.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetFillsRes.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -108,7 +108,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "getUserTransfers"),
+              "io.lightcone.data.dex.DexService", "getUserTransfers"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetUserTransactionsReq.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetUserTransactionsRes.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -117,7 +117,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "getNextOrderId"),
+              "io.lightcone.data.dex.DexService", "getNextOrderId"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.GetNextOrderIdReq.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(com.google.protobuf.UInt32Value.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -126,7 +126,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "getNonce"),
+              "io.lightcone.data.dex.DexService", "getNonce"),
           io.grpc.protobuf.ProtoUtils.marshaller(com.google.protobuf.UInt32Value.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(com.google.protobuf.UInt32Value.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -135,7 +135,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "submitOrder"),
+              "io.lightcone.data.dex.DexService", "submitOrder"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.order.Order.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.SubmitOrderRes.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -144,7 +144,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "cancelOrder"),
+              "io.lightcone.data.dex.DexService", "cancelOrder"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.SimpleOrderCancellationReq.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.CancelOrderRes.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -153,7 +153,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "submitOrderCancellation"),
+              "io.lightcone.data.dex.DexService", "submitOrderCancellation"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.requests.OrderCancellationRequest.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.CancelOrderRes.getDefaultInstance()));
   @io.grpc.ExperimentalApi
@@ -162,7 +162,7 @@ public class DexServiceGrpc {
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
-              "io.lightcone.data.dex.DexServiceImpl", "submitOffchainWithdrawal"),
+              "io.lightcone.data.dex.DexService", "submitOffchainWithdrawal"),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.requests.OffchainWithdrawalRequest.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.lightcone.data.dex.OffchainWithdrawalalRes.getDefaultInstance()));
 
