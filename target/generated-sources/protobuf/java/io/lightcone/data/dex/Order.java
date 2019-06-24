@@ -455,7 +455,7 @@ public  final class Order extends
     if (!getQuoteFillAmountBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, quoteFillAmount_);
     }
-    if (status_ != io.lightcone.data.types.OrderStatus.STATUS_NEW.getNumber()) {
+    if (status_ != io.lightcone.data.types.OrderStatus.ORDER_STATUS_NEW.getNumber()) {
       output.writeEnum(9, status_);
     }
     if (submittedAt_ != 0L) {
@@ -498,7 +498,7 @@ public  final class Order extends
     if (!getQuoteFillAmountBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, quoteFillAmount_);
     }
-    if (status_ != io.lightcone.data.types.OrderStatus.STATUS_NEW.getNumber()) {
+    if (status_ != io.lightcone.data.types.OrderStatus.ORDER_STATUS_NEW.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(9, status_);
     }

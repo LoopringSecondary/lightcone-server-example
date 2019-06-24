@@ -51,30 +51,41 @@ public interface UserTransactionOrBuilder extends
   long getUpdatedAt();
 
   /**
-   * <code>optional string status = 7;</code>
+   * <code>optional .io.lightcone.data.types.UserTxStatus tx_status = 7;</code>
    */
-  java.lang.String getStatus();
+  int getTxStatusValue();
   /**
-   * <code>optional string status = 7;</code>
+   * <code>optional .io.lightcone.data.types.UserTxStatus tx_status = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getStatusBytes();
+  io.lightcone.data.types.UserTxStatus getTxStatus();
 
   /**
-   * <code>optional string transaction_type = 8;</code>
+   * <code>optional .io.lightcone.data.types.UserTxType tx_type = 8;</code>
    *
    * <pre>
    * `deposit`, `withdrawal` or `transfer`
    * </pre>
    */
-  java.lang.String getTransactionType();
+  int getTxTypeValue();
   /**
-   * <code>optional string transaction_type = 8;</code>
+   * <code>optional .io.lightcone.data.types.UserTxType tx_type = 8;</code>
    *
    * <pre>
    * `deposit`, `withdrawal` or `transfer`
    * </pre>
    */
-  com.google.protobuf.ByteString
-      getTransactionTypeBytes();
+  io.lightcone.data.types.UserTxType getTxType();
+
+  /**
+   * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+   */
+  boolean hasTxHash();
+  /**
+   * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+   */
+  io.lightcone.data.types.SHA256Hash getTxHash();
+  /**
+   * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+   */
+  io.lightcone.data.types.SHA256HashOrBuilder getTxHashOrBuilder();
 }

@@ -86,6 +86,7 @@ io/lightcone/data/dex/GetUserOrdersReq$Builder.class
 io/lightcone/data/dex/GetTokensReq$Builder.class
 io/lightcone/data/types/EdDSAPrivKey.class
 io/lightcone/data/dex/GetUserFillsReq$Builder.class
+io/lightcone/data/types/UserTxType$1.class
 io/lightcone/data/dex/UserTransaction$Builder.class
 io/lightcone/data/dex/TokenInfo$1.class
 io/lightcone/data/types/EdDSAPrivKey$Builder.class
@@ -225,6 +226,7 @@ io/lightcone/data/dex/Candles$OHLC.class
 io/lightcone/data/order/TokenAmounts$Builder.class
 io/lightcone/data/dex/GetUserTransactionsReq.class
 io/lightcone/data/requests/OnchainWithdrawalRequest.class
+io/lightcone/data/types/UserTxType.class
 io/lightcone/data/dex/Candles$Builder.class
 io/lightcone/data/dex/GetMarketsReq$Builder.class
 io/lightcone/data/dex/DexServiceGrpc.class
@@ -243,6 +245,8 @@ io/lightcone/data/types/CursorPaging$1.class
 io/lightcone/data/dex/SocketIOSubscription$ParamsForCandles.class
 io/lightcone/data/dex/GetTokensRes$1.class
 io/lightcone/data/requests/OnchainWithdrawalRequest$Builder.class
+io/lightcone/data/types/UserTxStatus.class
+io/lightcone/data/types/UserTxStatus$1.class
 io/lightcone/data/dex/GetCandlesReqOrBuilder.class
 io/lightcone/data/dex/GetUserTransactionsReq$Builder.class
 io/lightcone/data/types/TokenMetadata$Type$1.class

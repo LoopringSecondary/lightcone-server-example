@@ -9,64 +9,64 @@ package io.lightcone.data.types;
 public enum OrderStatus
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>STATUS_NEW = 0;</code>
+   * <code>ORDER_STATUS_NEW = 0;</code>
    */
-  STATUS_NEW(0, 0),
+  ORDER_STATUS_NEW(0, 0),
   /**
-   * <code>STATUS_PENDING = 1;</code>
+   * <code>ORDER_STATUS_PENDING = 1;</code>
    */
-  STATUS_PENDING(1, 1),
+  ORDER_STATUS_PENDING(1, 1),
   /**
-   * <code>STATUS_EXPIRED = 2;</code>
+   * <code>ORDER_STATUS_EXPIRED = 2;</code>
    */
-  STATUS_EXPIRED(2, 2),
+  ORDER_STATUS_EXPIRED(2, 2),
   /**
-   * <code>STATUS_COMPLETELY_FILLED = 4;</code>
+   * <code>ORDER_STATUS_COMPLETELY_FILLED = 4;</code>
    */
-  STATUS_COMPLETELY_FILLED(3, 4),
+  ORDER_STATUS_COMPLETELY_FILLED(3, 4),
   /**
-   * <code>STATUS_PARTIALLY_FILLED = 5;</code>
+   * <code>ORDER_STATUS_PARTIALLY_FILLED = 5;</code>
    */
-  STATUS_PARTIALLY_FILLED(4, 5),
+  ORDER_STATUS_PARTIALLY_FILLED(4, 5),
   /**
-   * <code>STATUS_ONCHAIN_CANCELLED = 6;</code>
+   * <code>ORDER_STATUS_ONCHAIN_CANCELLED = 6;</code>
    */
-  STATUS_ONCHAIN_CANCELLED(5, 6),
+  ORDER_STATUS_ONCHAIN_CANCELLED(5, 6),
   /**
-   * <code>STATUS_SOFT_CANCELLED = 7;</code>
+   * <code>ORDER_STATUS_SOFT_CANCELLED = 7;</code>
    */
-  STATUS_SOFT_CANCELLED(6, 7),
+  ORDER_STATUS_SOFT_CANCELLED(6, 7),
   UNRECOGNIZED(-1, -1),
   ;
 
   /**
-   * <code>STATUS_NEW = 0;</code>
+   * <code>ORDER_STATUS_NEW = 0;</code>
    */
-  public static final int STATUS_NEW_VALUE = 0;
+  public static final int ORDER_STATUS_NEW_VALUE = 0;
   /**
-   * <code>STATUS_PENDING = 1;</code>
+   * <code>ORDER_STATUS_PENDING = 1;</code>
    */
-  public static final int STATUS_PENDING_VALUE = 1;
+  public static final int ORDER_STATUS_PENDING_VALUE = 1;
   /**
-   * <code>STATUS_EXPIRED = 2;</code>
+   * <code>ORDER_STATUS_EXPIRED = 2;</code>
    */
-  public static final int STATUS_EXPIRED_VALUE = 2;
+  public static final int ORDER_STATUS_EXPIRED_VALUE = 2;
   /**
-   * <code>STATUS_COMPLETELY_FILLED = 4;</code>
+   * <code>ORDER_STATUS_COMPLETELY_FILLED = 4;</code>
    */
-  public static final int STATUS_COMPLETELY_FILLED_VALUE = 4;
+  public static final int ORDER_STATUS_COMPLETELY_FILLED_VALUE = 4;
   /**
-   * <code>STATUS_PARTIALLY_FILLED = 5;</code>
+   * <code>ORDER_STATUS_PARTIALLY_FILLED = 5;</code>
    */
-  public static final int STATUS_PARTIALLY_FILLED_VALUE = 5;
+  public static final int ORDER_STATUS_PARTIALLY_FILLED_VALUE = 5;
   /**
-   * <code>STATUS_ONCHAIN_CANCELLED = 6;</code>
+   * <code>ORDER_STATUS_ONCHAIN_CANCELLED = 6;</code>
    */
-  public static final int STATUS_ONCHAIN_CANCELLED_VALUE = 6;
+  public static final int ORDER_STATUS_ONCHAIN_CANCELLED_VALUE = 6;
   /**
-   * <code>STATUS_SOFT_CANCELLED = 7;</code>
+   * <code>ORDER_STATUS_SOFT_CANCELLED = 7;</code>
    */
-  public static final int STATUS_SOFT_CANCELLED_VALUE = 7;
+  public static final int ORDER_STATUS_SOFT_CANCELLED_VALUE = 7;
 
 
   public final int getNumber() {
@@ -79,13 +79,13 @@ public enum OrderStatus
 
   public static OrderStatus valueOf(int value) {
     switch (value) {
-      case 0: return STATUS_NEW;
-      case 1: return STATUS_PENDING;
-      case 2: return STATUS_EXPIRED;
-      case 4: return STATUS_COMPLETELY_FILLED;
-      case 5: return STATUS_PARTIALLY_FILLED;
-      case 6: return STATUS_ONCHAIN_CANCELLED;
-      case 7: return STATUS_SOFT_CANCELLED;
+      case 0: return ORDER_STATUS_NEW;
+      case 1: return ORDER_STATUS_PENDING;
+      case 2: return ORDER_STATUS_EXPIRED;
+      case 4: return ORDER_STATUS_COMPLETELY_FILLED;
+      case 5: return ORDER_STATUS_PARTIALLY_FILLED;
+      case 6: return ORDER_STATUS_ONCHAIN_CANCELLED;
+      case 7: return ORDER_STATUS_SOFT_CANCELLED;
       default: return null;
     }
   }

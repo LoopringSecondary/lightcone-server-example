@@ -17,6 +17,7 @@
 /Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/dex/SubmitOrderRes.java
 /Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/types/NonceOrBuilder.java
 /Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/types/CursorPagingOrBuilder.java
+/Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/types/UserTxStatus.java
 /Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/dex/DexConfigurations.java
 /Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/dex/GetFillsResOrBuilder.java
 /Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/types/MarketOrBuilder.java
@@ -124,6 +125,7 @@
 /Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/dex/UserTransactionOrBuilder.java
 /Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/dex/GetUserTransactionsReq.java
 /Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/types/TokenMetadata.java
+/Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/types/UserTxType.java
 /Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/requests/OffchainWithdrawalRequest.java
 /Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/types/MarketTickerOrBuilder.java
 /Users/kenshin/Work/loopring/lightcone-server-example/target/generated-sources/protobuf/java/io/lightcone/data/dex/GetUserOrdersResOrBuilder.java

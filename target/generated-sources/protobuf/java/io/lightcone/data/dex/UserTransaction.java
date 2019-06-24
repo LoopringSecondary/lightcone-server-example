@@ -5,10 +5,6 @@ package io.lightcone.data.dex;
 
 /**
  * Protobuf type {@code io.lightcone.data.dex.UserTransaction}
- *
- * <pre>
- * TODO: check with yadong
- * </pre>
  */
 public  final class UserTransaction extends
     com.google.protobuf.GeneratedMessage implements
@@ -25,8 +21,8 @@ public  final class UserTransaction extends
     amount_ = "";
     submittedAt_ = 0L;
     updatedAt_ = 0L;
-    status_ = "";
-    transactionType_ = "";
+    txStatus_ = 0;
+    txType_ = 0;
   }
 
   @java.lang.Override
@@ -84,16 +80,29 @@ public  final class UserTransaction extends
             updatedAt_ = input.readUInt64();
             break;
           }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 56: {
+            int rawValue = input.readEnum();
 
-            status_ = s;
+            txStatus_ = rawValue;
             break;
           }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 64: {
+            int rawValue = input.readEnum();
 
-            transactionType_ = s;
+            txType_ = rawValue;
+            break;
+          }
+          case 74: {
+            io.lightcone.data.types.SHA256Hash.Builder subBuilder = null;
+            if (txHash_ != null) {
+              subBuilder = txHash_.toBuilder();
+            }
+            txHash_ = input.readMessage(io.lightcone.data.types.SHA256Hash.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(txHash_);
+              txHash_ = subBuilder.buildPartial();
+            }
+
             break;
           }
         }
@@ -207,80 +216,65 @@ public  final class UserTransaction extends
     return updatedAt_;
   }
 
-  public static final int STATUS_FIELD_NUMBER = 7;
-  private volatile java.lang.Object status_;
+  public static final int TX_STATUS_FIELD_NUMBER = 7;
+  private int txStatus_;
   /**
-   * <code>optional string status = 7;</code>
+   * <code>optional .io.lightcone.data.types.UserTxStatus tx_status = 7;</code>
    */
-  public java.lang.String getStatus() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      status_ = s;
-      return s;
-    }
+  public int getTxStatusValue() {
+    return txStatus_;
   }
   /**
-   * <code>optional string status = 7;</code>
+   * <code>optional .io.lightcone.data.types.UserTxStatus tx_status = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getStatusBytes() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      status_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public io.lightcone.data.types.UserTxStatus getTxStatus() {
+    io.lightcone.data.types.UserTxStatus result = io.lightcone.data.types.UserTxStatus.valueOf(txStatus_);
+    return result == null ? io.lightcone.data.types.UserTxStatus.UNRECOGNIZED : result;
   }
 
-  public static final int TRANSACTION_TYPE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object transactionType_;
+  public static final int TX_TYPE_FIELD_NUMBER = 8;
+  private int txType_;
   /**
-   * <code>optional string transaction_type = 8;</code>
+   * <code>optional .io.lightcone.data.types.UserTxType tx_type = 8;</code>
    *
    * <pre>
    * `deposit`, `withdrawal` or `transfer`
    * </pre>
    */
-  public java.lang.String getTransactionType() {
-    java.lang.Object ref = transactionType_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      transactionType_ = s;
-      return s;
-    }
+  public int getTxTypeValue() {
+    return txType_;
   }
   /**
-   * <code>optional string transaction_type = 8;</code>
+   * <code>optional .io.lightcone.data.types.UserTxType tx_type = 8;</code>
    *
    * <pre>
    * `deposit`, `withdrawal` or `transfer`
    * </pre>
    */
-  public com.google.protobuf.ByteString
-      getTransactionTypeBytes() {
-    java.lang.Object ref = transactionType_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      transactionType_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public io.lightcone.data.types.UserTxType getTxType() {
+    io.lightcone.data.types.UserTxType result = io.lightcone.data.types.UserTxType.valueOf(txType_);
+    return result == null ? io.lightcone.data.types.UserTxType.UNRECOGNIZED : result;
+  }
+
+  public static final int TX_HASH_FIELD_NUMBER = 9;
+  private io.lightcone.data.types.SHA256Hash txHash_;
+  /**
+   * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+   */
+  public boolean hasTxHash() {
+    return txHash_ != null;
+  }
+  /**
+   * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+   */
+  public io.lightcone.data.types.SHA256Hash getTxHash() {
+    return txHash_ == null ? io.lightcone.data.types.SHA256Hash.getDefaultInstance() : txHash_;
+  }
+  /**
+   * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+   */
+  public io.lightcone.data.types.SHA256HashOrBuilder getTxHashOrBuilder() {
+    return getTxHash();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -313,11 +307,14 @@ public  final class UserTransaction extends
     if (updatedAt_ != 0L) {
       output.writeUInt64(6, updatedAt_);
     }
-    if (!getStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, status_);
+    if (txStatus_ != io.lightcone.data.types.UserTxStatus.TX_STATUS_NEW.getNumber()) {
+      output.writeEnum(7, txStatus_);
     }
-    if (!getTransactionTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 8, transactionType_);
+    if (txType_ != io.lightcone.data.types.UserTxType.TX_TYPE_DEPOSIT.getNumber()) {
+      output.writeEnum(8, txType_);
+    }
+    if (txHash_ != null) {
+      output.writeMessage(9, getTxHash());
     }
   }
 
@@ -349,11 +346,17 @@ public  final class UserTransaction extends
       size += com.google.protobuf.CodedOutputStream
         .computeUInt64Size(6, updatedAt_);
     }
-    if (!getStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, status_);
+    if (txStatus_ != io.lightcone.data.types.UserTxStatus.TX_STATUS_NEW.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(7, txStatus_);
     }
-    if (!getTransactionTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, transactionType_);
+    if (txType_ != io.lightcone.data.types.UserTxType.TX_TYPE_DEPOSIT.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(8, txType_);
+    }
+    if (txHash_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getTxHash());
     }
     memoizedSize = size;
     return size;
@@ -433,10 +436,6 @@ public  final class UserTransaction extends
   }
   /**
    * Protobuf type {@code io.lightcone.data.dex.UserTransaction}
-   *
-   * <pre>
-   * TODO: check with yadong
-   * </pre>
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
@@ -482,10 +481,16 @@ public  final class UserTransaction extends
 
       updatedAt_ = 0L;
 
-      status_ = "";
+      txStatus_ = 0;
 
-      transactionType_ = "";
+      txType_ = 0;
 
+      if (txHashBuilder_ == null) {
+        txHash_ = null;
+      } else {
+        txHash_ = null;
+        txHashBuilder_ = null;
+      }
       return this;
     }
 
@@ -514,8 +519,13 @@ public  final class UserTransaction extends
       result.amount_ = amount_;
       result.submittedAt_ = submittedAt_;
       result.updatedAt_ = updatedAt_;
-      result.status_ = status_;
-      result.transactionType_ = transactionType_;
+      result.txStatus_ = txStatus_;
+      result.txType_ = txType_;
+      if (txHashBuilder_ == null) {
+        result.txHash_ = txHash_;
+      } else {
+        result.txHash_ = txHashBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -550,13 +560,14 @@ public  final class UserTransaction extends
       if (other.getUpdatedAt() != 0L) {
         setUpdatedAt(other.getUpdatedAt());
       }
-      if (!other.getStatus().isEmpty()) {
-        status_ = other.status_;
-        onChanged();
+      if (other.txStatus_ != 0) {
+        setTxStatusValue(other.getTxStatusValue());
       }
-      if (!other.getTransactionType().isEmpty()) {
-        transactionType_ = other.transactionType_;
-        onChanged();
+      if (other.txType_ != 0) {
+        setTxTypeValue(other.getTxTypeValue());
+      }
+      if (other.hasTxHash()) {
+        mergeTxHash(other.getTxHash());
       }
       onChanged();
       return this;
@@ -803,162 +814,229 @@ public  final class UserTransaction extends
       return this;
     }
 
-    private java.lang.Object status_ = "";
+    private int txStatus_ = 0;
     /**
-     * <code>optional string status = 7;</code>
+     * <code>optional .io.lightcone.data.types.UserTxStatus tx_status = 7;</code>
      */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    public int getTxStatusValue() {
+      return txStatus_;
     }
     /**
-     * <code>optional string status = 7;</code>
+     * <code>optional .io.lightcone.data.types.UserTxStatus tx_status = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string status = 7;</code>
-     */
-    public Builder setStatus(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      status_ = value;
+    public Builder setTxStatusValue(int value) {
+      txStatus_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string status = 7;</code>
+     * <code>optional .io.lightcone.data.types.UserTxStatus tx_status = 7;</code>
      */
-    public Builder clearStatus() {
+    public io.lightcone.data.types.UserTxStatus getTxStatus() {
+      io.lightcone.data.types.UserTxStatus result = io.lightcone.data.types.UserTxStatus.valueOf(txStatus_);
+      return result == null ? io.lightcone.data.types.UserTxStatus.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .io.lightcone.data.types.UserTxStatus tx_status = 7;</code>
+     */
+    public Builder setTxStatus(io.lightcone.data.types.UserTxStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       
-      status_ = getDefaultInstance().getStatus();
+      txStatus_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string status = 7;</code>
+     * <code>optional .io.lightcone.data.types.UserTxStatus tx_status = 7;</code>
      */
-    public Builder setStatusBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+    public Builder clearTxStatus() {
       
-      status_ = value;
+      txStatus_ = 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object transactionType_ = "";
+    private int txType_ = 0;
     /**
-     * <code>optional string transaction_type = 8;</code>
+     * <code>optional .io.lightcone.data.types.UserTxType tx_type = 8;</code>
      *
      * <pre>
      * `deposit`, `withdrawal` or `transfer`
      * </pre>
      */
-    public java.lang.String getTransactionType() {
-      java.lang.Object ref = transactionType_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        transactionType_ = s;
-        return s;
+    public int getTxTypeValue() {
+      return txType_;
+    }
+    /**
+     * <code>optional .io.lightcone.data.types.UserTxType tx_type = 8;</code>
+     *
+     * <pre>
+     * `deposit`, `withdrawal` or `transfer`
+     * </pre>
+     */
+    public Builder setTxTypeValue(int value) {
+      txType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .io.lightcone.data.types.UserTxType tx_type = 8;</code>
+     *
+     * <pre>
+     * `deposit`, `withdrawal` or `transfer`
+     * </pre>
+     */
+    public io.lightcone.data.types.UserTxType getTxType() {
+      io.lightcone.data.types.UserTxType result = io.lightcone.data.types.UserTxType.valueOf(txType_);
+      return result == null ? io.lightcone.data.types.UserTxType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .io.lightcone.data.types.UserTxType tx_type = 8;</code>
+     *
+     * <pre>
+     * `deposit`, `withdrawal` or `transfer`
+     * </pre>
+     */
+    public Builder setTxType(io.lightcone.data.types.UserTxType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      txType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .io.lightcone.data.types.UserTxType tx_type = 8;</code>
+     *
+     * <pre>
+     * `deposit`, `withdrawal` or `transfer`
+     * </pre>
+     */
+    public Builder clearTxType() {
+      
+      txType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private io.lightcone.data.types.SHA256Hash txHash_ = null;
+    private com.google.protobuf.SingleFieldBuilder<
+        io.lightcone.data.types.SHA256Hash, io.lightcone.data.types.SHA256Hash.Builder, io.lightcone.data.types.SHA256HashOrBuilder> txHashBuilder_;
+    /**
+     * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+     */
+    public boolean hasTxHash() {
+      return txHashBuilder_ != null || txHash_ != null;
+    }
+    /**
+     * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+     */
+    public io.lightcone.data.types.SHA256Hash getTxHash() {
+      if (txHashBuilder_ == null) {
+        return txHash_ == null ? io.lightcone.data.types.SHA256Hash.getDefaultInstance() : txHash_;
       } else {
-        return (java.lang.String) ref;
+        return txHashBuilder_.getMessage();
       }
     }
     /**
-     * <code>optional string transaction_type = 8;</code>
-     *
-     * <pre>
-     * `deposit`, `withdrawal` or `transfer`
-     * </pre>
+     * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
      */
-    public com.google.protobuf.ByteString
-        getTransactionTypeBytes() {
-      java.lang.Object ref = transactionType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        transactionType_ = b;
-        return b;
+    public Builder setTxHash(io.lightcone.data.types.SHA256Hash value) {
+      if (txHashBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        txHash_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        txHashBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+     */
+    public Builder setTxHash(
+        io.lightcone.data.types.SHA256Hash.Builder builderForValue) {
+      if (txHashBuilder_ == null) {
+        txHash_ = builderForValue.build();
+        onChanged();
+      } else {
+        txHashBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+     */
+    public Builder mergeTxHash(io.lightcone.data.types.SHA256Hash value) {
+      if (txHashBuilder_ == null) {
+        if (txHash_ != null) {
+          txHash_ =
+            io.lightcone.data.types.SHA256Hash.newBuilder(txHash_).mergeFrom(value).buildPartial();
+        } else {
+          txHash_ = value;
+        }
+        onChanged();
+      } else {
+        txHashBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+     */
+    public Builder clearTxHash() {
+      if (txHashBuilder_ == null) {
+        txHash_ = null;
+        onChanged();
+      } else {
+        txHash_ = null;
+        txHashBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+     */
+    public io.lightcone.data.types.SHA256Hash.Builder getTxHashBuilder() {
+      
+      onChanged();
+      return getTxHashFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
+     */
+    public io.lightcone.data.types.SHA256HashOrBuilder getTxHashOrBuilder() {
+      if (txHashBuilder_ != null) {
+        return txHashBuilder_.getMessageOrBuilder();
+      } else {
+        return txHash_ == null ?
+            io.lightcone.data.types.SHA256Hash.getDefaultInstance() : txHash_;
       }
     }
     /**
-     * <code>optional string transaction_type = 8;</code>
-     *
-     * <pre>
-     * `deposit`, `withdrawal` or `transfer`
-     * </pre>
+     * <code>optional .io.lightcone.data.types.SHA256Hash tx_hash = 9;</code>
      */
-    public Builder setTransactionType(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      transactionType_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string transaction_type = 8;</code>
-     *
-     * <pre>
-     * `deposit`, `withdrawal` or `transfer`
-     * </pre>
-     */
-    public Builder clearTransactionType() {
-      
-      transactionType_ = getDefaultInstance().getTransactionType();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string transaction_type = 8;</code>
-     *
-     * <pre>
-     * `deposit`, `withdrawal` or `transfer`
-     * </pre>
-     */
-    public Builder setTransactionTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      transactionType_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilder<
+        io.lightcone.data.types.SHA256Hash, io.lightcone.data.types.SHA256Hash.Builder, io.lightcone.data.types.SHA256HashOrBuilder> 
+        getTxHashFieldBuilder() {
+      if (txHashBuilder_ == null) {
+        txHashBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            io.lightcone.data.types.SHA256Hash, io.lightcone.data.types.SHA256Hash.Builder, io.lightcone.data.types.SHA256HashOrBuilder>(
+                getTxHash(),
+                getParentForChildren(),
+                isClean());
+        txHash_ = null;
+      }
+      return txHashBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

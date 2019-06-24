@@ -278,116 +278,119 @@ public final class ServiceDex {
       "\030\003 \001(\001\022\r\n\005price\030\004 \001(\001\022\022\n\nvolume_24h\030\005 \001(" +
       "\001\022\031\n\021percent_change_1h\030\006 \001(\001\022\032\n\022percent_",
       "change_24h\030\007 \001(\001\022\031\n\021percent_change_7d\030\010 " +
-      "\001(\001\"\257\001\n\017UserTransaction\022\022\n\nrequest_id\030\001 " +
+      "\001(\001\"\253\002\n\017UserTransaction\022\022\n\nrequest_id\030\001 " +
       "\001(\004\022\022\n\naccount_id\030\002 \001(\004\022\020\n\010token_id\030\003 \001(" +
       "\r\022\016\n\006amount\030\004 \001(\t\022\024\n\014submitted_at\030\005 \001(\004\022" +
-      "\022\n\nupdated_at\030\006 \001(\004\022\016\n\006status\030\007 \001(\t\022\030\n\020t" +
-      "ransaction_type\030\010 \001(\t\"p\n\017GetUserFillsReq" +
-      "\022\022\n\naccount_id\030\001 \001(\004\022\022\n\norder_uuid\030\002 \001(\004" +
-      "\0225\n\006paging\030\003 \001(\0132%.io.lightcone.data.typ" +
-      "es.CursorPaging\"3\n\021GetMarketFillsReq\022\021\n\t" +
-      "market_id\030\001 \001(\004\022\013\n\003num\030\002 \001(\r\"9\n\013GetFills",
-      "Res\022*\n\005fills\030\001 \003(\0132\033.io.lightcone.data.d" +
-      "ex.Fill\"\206\004\n\tOrderBook\022\022\n\nlast_price\030\001 \001(" +
-      "\t\022\027\n\017last_price_fiat\030\002 \001(\t\0224\n\005sells\030\003 \003(" +
-      "\0132%.io.lightcone.data.dex.OrderBook.Item" +
-      "\0223\n\004buys\030\004 \003(\0132%.io.lightcone.data.dex.O" +
-      "rderBook.Item\0227\n\rbase_token_id\030\005 \001(\0132 .i" +
-      "o.lightcone.data.types.TokenID\0228\n\016quote_" +
-      "token_id\030\006 \001(\0132 .io.lightcone.data.types" +
-      ".TokenID\032@\n\004Item\022\r\n\005price\030\001 \001(\t\022\023\n\013base_" +
-      "amount\030\002 \001(\t\022\024\n\014quote_amount\030\003 \001(\t\032\253\001\n\006U",
-      "pdate\022\r\n\005level\030\001 \001(\005\0224\n\005sells\030\002 \003(\0132%.io" +
-      ".lightcone.data.dex.OrderBook.Item\0223\n\004bu" +
-      "ys\030\003 \003(\0132%.io.lightcone.data.dex.OrderBo" +
-      "ok.Item\022\024\n\014latest_price\030\004 \001(\001\022\021\n\tmarket_" +
-      "id\030\005 \001(\004\"T\n\017GetOrderBookReq\022\021\n\tmarket_id" +
-      "\030\001 \001(\004\022\031\n\021aggregation_level\030\002 \001(\r\022\023\n\013fia" +
-      "t_symbol\030\003 \001(\t\"R\n\007Candles\0221\n\004data\030\001 \003(\0132" +
-      "#.io.lightcone.data.dex.Candles.OHLC\032\024\n\004" +
-      "OHLC\022\014\n\004ohlc\030\001 \003(\001\"\216\001\n\rGetCandlesReq\022\021\n\t" +
-      "market_id\030\001 \001(\004\0223\n\010interval\030\002 \001(\0162!.io.l",
-      "ightcone.data.types.Interval\0225\n\006paging\030\003" +
-      " \001(\0132%.io.lightcone.data.types.CursorPag" +
-      "ing\"\217\001\n\026GetUserTransactionsReq\022\022\n\naccoun" +
-      "t_id\030\001 \001(\004\022\020\n\010token_id\030\002 \001(\r\022\030\n\020transact" +
-      "ion_type\030\003 \001(\t\0225\n\006paging\030\004 \001(\0132%.io.ligh" +
-      "tcone.data.types.CursorPaging\"V\n\026GetUser" +
-      "TransactionsRes\022<\n\014transactions\030\001 \003(\0132&." +
-      "io.lightcone.data.dex.UserTransaction\">\n" +
-      "\021GetNextOrderIdReq\022\022\n\naccount_id\030\001 \001(\004\022\025" +
-      "\n\rtoken_sell_id\030\002 \001(\r\"$\n\016SubmitOrderRes\022",
-      "\022\n\norder_uuid\030\001 \001(\004\"%\n\016CancelOrderRes\022\023\n" +
-      "\013order_uuids\030\001 \003(\004\"1\n\027OffchainWithdrawal" +
-      "alRes\022\026\n\016withdrwal_uuid\030\001 \001(\004\"\214\001\n\032Simple" +
-      "OrderCancellationReq\022\023\n\013exchange_id\030\001 \001(" +
-      "\r\022\022\n\naccount_id\030\002 \001(\004\022\022\n\norder_uuid\030\003 \001(" +
-      "\004\022\021\n\tmarket_id\030\004 \001(\004\022\021\n\ttimestamp\030\005 \001(\004\022" +
-      "\013\n\003sig\030\006 \001(\t\"\363\007\n\024SocketIOSubscription\022\\\n" +
-      "\024params_for_orderbook\030\001 \001(\0132>.io.lightco" +
-      "ne.data.dex.SocketIOSubscription.ParamsF" +
-      "orOrderbook\022X\n\022params_for_candles\030\002 \001(\0132",
-      "<.io.lightcone.data.dex.SocketIOSubscrip" +
-      "tion.ParamsForCandles\022T\n\020params_for_fill" +
-      "s\030\003 \001(\0132:.io.lightcone.data.dex.SocketIO" +
-      "Subscription.ParamsForFills\022i\n\033params_fo" +
-      "r_internal_tickers\030\004 \001(\0132D.io.lightcone." +
-      "data.dex.SocketIOSubscription.ParamsForI" +
-      "nternalTickers\0324\n\003Ack\022-\n\005error\030\001 \001(\0132\036.i" +
-      "o.lightcone.data.types.Error\032[\n\016ParamsFo" +
-      "rFills\0226\n\naccount_id\030\001 \001(\0132\".io.lightcon" +
-      "e.data.types.AccountID\022\021\n\tmarket_id\030\002 \001(",
-      "\004\032-\n\030ParamsForInternalTickers\022\021\n\tmarket_" +
-      "id\030\001 \001(\004\0326\n\022ParamsForOrderbook\022\r\n\005level\030" +
-      "\001 \001(\005\022\021\n\tmarket_id\030\002 \001(\004\032\200\001\n\020ParamsForCa" +
-      "ndles\022\021\n\tmarket_id\030\001 \001(\004\022\022\n\nbegin_time\030\002" +
-      " \001(\003\022\020\n\010end_time\030\003 \001(\003\0223\n\010interval\030\004 \001(\016" +
-      "2!.io.lightcone.data.types.Interval\032\344\001\n\014" +
-      "Notification\022:\n\torderbook\030\001 \001(\0132\'.io.lig" +
-      "htcone.data.dex.OrderBook.Update\022/\n\007cand" +
-      "les\030\002 \001(\0132\036.io.lightcone.data.dex.Candle" +
-      "s\022)\n\004fill\030\003 \001(\0132\033.io.lightcone.data.dex.",
-      "Fill\022<\n\017internal_ticker\030\004 \001(\0132#.io.light" +
-      "cone.data.dex.MarketTicker2\377\013\n\nDexServic" +
-      "e\022X\n\024getDexConfigurations\022\026.google.proto" +
-      "buf.Empty\032(.io.lightcone.data.dex.DexCon" +
-      "figurations\022U\n\tgetTokens\022#.io.lightcone." +
-      "data.dex.GetTokensReq\032#.io.lightcone.dat" +
-      "a.dex.GetTokensRes\022X\n\ngetMarkets\022$.io.li" +
-      "ghtcone.data.dex.GetMarketsReq\032$.io.ligh" +
-      "tcone.data.dex.GetMarketsRes\022^\n\016getMarke" +
-      "tFills\022(.io.lightcone.data.dex.GetMarket",
-      "FillsReq\032\".io.lightcone.data.dex.GetFill" +
-      "sRes\022X\n\014getOrderBook\022&.io.lightcone.data" +
-      ".dex.GetOrderBookReq\032 .io.lightcone.data" +
-      ".dex.OrderBook\022R\n\ngetCandles\022$.io.lightc" +
-      "one.data.dex.GetCandlesReq\032\036.io.lightcon" +
-      "e.data.dex.Candles\022J\n\ngetAccount\022\034.googl" +
-      "e.protobuf.StringValue\032\036.io.lightcone.da" +
-      "ta.dex.Account\022a\n\rgetUserOrders\022\'.io.lig" +
-      "htcone.data.dex.GetUserOrdersReq\032\'.io.li" +
-      "ghtcone.data.dex.GetUserOrdersRes\022Z\n\014get",
-      "UserFills\022&.io.lightcone.data.dex.GetUse" +
-      "rFillsReq\032\".io.lightcone.data.dex.GetFil" +
-      "lsRes\022p\n\020getUserTransfers\022-.io.lightcone" +
-      ".data.dex.GetUserTransactionsReq\032-.io.li" +
-      "ghtcone.data.dex.GetUserTransactionsRes\022" +
-      "X\n\016getNextOrderId\022(.io.lightcone.data.de" +
-      "x.GetNextOrderIdReq\032\034.google.protobuf.UI" +
-      "nt32Value\022F\n\010getNonce\022\034.google.protobuf." +
-      "UInt32Value\032\034.google.protobuf.UInt32Valu" +
-      "e\022T\n\013submitOrder\022\036.io.lightcone.data.ord",
-      "er.Order\032%.io.lightcone.data.dex.SubmitO" +
-      "rderRes\022g\n\013cancelOrder\0221.io.lightcone.da" +
-      "ta.dex.SimpleOrderCancellationReq\032%.io.l" +
-      "ightcone.data.dex.CancelOrderRes\022v\n\027subm" +
-      "itOrderCancellation\0224.io.lightcone.data." +
-      "requests.OrderCancellationRequest\032%.io.l" +
-      "ightcone.data.dex.CancelOrderRes\022\201\001\n\030sub" +
-      "mitOffchainWithdrawal\0225.io.lightcone.dat" +
-      "a.requests.OffchainWithdrawalRequest\032..i" +
-      "o.lightcone.data.dex.OffchainWithdrawala",
-      "lResB\002P\001b\006proto3"
+      "\022\n\nupdated_at\030\006 \001(\004\0228\n\ttx_status\030\007 \001(\0162%" +
+      ".io.lightcone.data.types.UserTxStatus\0224\n" +
+      "\007tx_type\030\010 \001(\0162#.io.lightcone.data.types" +
+      ".UserTxType\0224\n\007tx_hash\030\t \001(\0132#.io.lightc" +
+      "one.data.types.SHA256Hash\"p\n\017GetUserFill" +
+      "sReq\022\022\n\naccount_id\030\001 \001(\004\022\022\n\norder_uuid\030\002",
+      " \001(\004\0225\n\006paging\030\003 \001(\0132%.io.lightcone.data" +
+      ".types.CursorPaging\"3\n\021GetMarketFillsReq" +
+      "\022\021\n\tmarket_id\030\001 \001(\004\022\013\n\003num\030\002 \001(\r\"9\n\013GetF" +
+      "illsRes\022*\n\005fills\030\001 \003(\0132\033.io.lightcone.da" +
+      "ta.dex.Fill\"\206\004\n\tOrderBook\022\022\n\nlast_price\030" +
+      "\001 \001(\t\022\027\n\017last_price_fiat\030\002 \001(\t\0224\n\005sells\030" +
+      "\003 \003(\0132%.io.lightcone.data.dex.OrderBook." +
+      "Item\0223\n\004buys\030\004 \003(\0132%.io.lightcone.data.d" +
+      "ex.OrderBook.Item\0227\n\rbase_token_id\030\005 \001(\013" +
+      "2 .io.lightcone.data.types.TokenID\0228\n\016qu",
+      "ote_token_id\030\006 \001(\0132 .io.lightcone.data.t" +
+      "ypes.TokenID\032@\n\004Item\022\r\n\005price\030\001 \001(\t\022\023\n\013b" +
+      "ase_amount\030\002 \001(\t\022\024\n\014quote_amount\030\003 \001(\t\032\253" +
+      "\001\n\006Update\022\r\n\005level\030\001 \001(\005\0224\n\005sells\030\002 \003(\0132" +
+      "%.io.lightcone.data.dex.OrderBook.Item\0223" +
+      "\n\004buys\030\003 \003(\0132%.io.lightcone.data.dex.Ord" +
+      "erBook.Item\022\024\n\014latest_price\030\004 \001(\001\022\021\n\tmar" +
+      "ket_id\030\005 \001(\004\"T\n\017GetOrderBookReq\022\021\n\tmarke" +
+      "t_id\030\001 \001(\004\022\031\n\021aggregation_level\030\002 \001(\r\022\023\n" +
+      "\013fiat_symbol\030\003 \001(\t\"R\n\007Candles\0221\n\004data\030\001 ",
+      "\003(\0132#.io.lightcone.data.dex.Candles.OHLC" +
+      "\032\024\n\004OHLC\022\014\n\004ohlc\030\001 \003(\001\"\216\001\n\rGetCandlesReq" +
+      "\022\021\n\tmarket_id\030\001 \001(\004\0223\n\010interval\030\002 \001(\0162!." +
+      "io.lightcone.data.types.Interval\0225\n\006pagi" +
+      "ng\030\003 \001(\0132%.io.lightcone.data.types.Curso" +
+      "rPaging\"\217\001\n\026GetUserTransactionsReq\022\022\n\nac" +
+      "count_id\030\001 \001(\004\022\020\n\010token_id\030\002 \001(\r\022\030\n\020tran" +
+      "saction_type\030\003 \001(\t\0225\n\006paging\030\004 \001(\0132%.io." +
+      "lightcone.data.types.CursorPaging\"V\n\026Get" +
+      "UserTransactionsRes\022<\n\014transactions\030\001 \003(",
+      "\0132&.io.lightcone.data.dex.UserTransactio" +
+      "n\">\n\021GetNextOrderIdReq\022\022\n\naccount_id\030\001 \001" +
+      "(\004\022\025\n\rtoken_sell_id\030\002 \001(\r\"$\n\016SubmitOrder" +
+      "Res\022\022\n\norder_uuid\030\001 \001(\004\"%\n\016CancelOrderRe" +
+      "s\022\023\n\013order_uuids\030\001 \003(\004\"1\n\027OffchainWithdr" +
+      "awalalRes\022\026\n\016withdrwal_uuid\030\001 \001(\004\"\214\001\n\032Si" +
+      "mpleOrderCancellationReq\022\023\n\013exchange_id\030" +
+      "\001 \001(\r\022\022\n\naccount_id\030\002 \001(\004\022\022\n\norder_uuid\030" +
+      "\003 \001(\004\022\021\n\tmarket_id\030\004 \001(\004\022\021\n\ttimestamp\030\005 " +
+      "\001(\004\022\013\n\003sig\030\006 \001(\t\"\363\007\n\024SocketIOSubscriptio",
+      "n\022\\\n\024params_for_orderbook\030\001 \001(\0132>.io.lig" +
+      "htcone.data.dex.SocketIOSubscription.Par" +
+      "amsForOrderbook\022X\n\022params_for_candles\030\002 " +
+      "\001(\0132<.io.lightcone.data.dex.SocketIOSubs" +
+      "cription.ParamsForCandles\022T\n\020params_for_" +
+      "fills\030\003 \001(\0132:.io.lightcone.data.dex.Sock" +
+      "etIOSubscription.ParamsForFills\022i\n\033param" +
+      "s_for_internal_tickers\030\004 \001(\0132D.io.lightc" +
+      "one.data.dex.SocketIOSubscription.Params" +
+      "ForInternalTickers\0324\n\003Ack\022-\n\005error\030\001 \001(\013",
+      "2\036.io.lightcone.data.types.Error\032[\n\016Para" +
+      "msForFills\0226\n\naccount_id\030\001 \001(\0132\".io.ligh" +
+      "tcone.data.types.AccountID\022\021\n\tmarket_id\030" +
+      "\002 \001(\004\032-\n\030ParamsForInternalTickers\022\021\n\tmar" +
+      "ket_id\030\001 \001(\004\0326\n\022ParamsForOrderbook\022\r\n\005le" +
+      "vel\030\001 \001(\005\022\021\n\tmarket_id\030\002 \001(\004\032\200\001\n\020ParamsF" +
+      "orCandles\022\021\n\tmarket_id\030\001 \001(\004\022\022\n\nbegin_ti" +
+      "me\030\002 \001(\003\022\020\n\010end_time\030\003 \001(\003\0223\n\010interval\030\004" +
+      " \001(\0162!.io.lightcone.data.types.Interval\032" +
+      "\344\001\n\014Notification\022:\n\torderbook\030\001 \001(\0132\'.io",
+      ".lightcone.data.dex.OrderBook.Update\022/\n\007" +
+      "candles\030\002 \001(\0132\036.io.lightcone.data.dex.Ca" +
+      "ndles\022)\n\004fill\030\003 \001(\0132\033.io.lightcone.data." +
+      "dex.Fill\022<\n\017internal_ticker\030\004 \001(\0132#.io.l" +
+      "ightcone.data.dex.MarketTicker2\377\013\n\nDexSe" +
+      "rvice\022X\n\024getDexConfigurations\022\026.google.p" +
+      "rotobuf.Empty\032(.io.lightcone.data.dex.De" +
+      "xConfigurations\022U\n\tgetTokens\022#.io.lightc" +
+      "one.data.dex.GetTokensReq\032#.io.lightcone" +
+      ".data.dex.GetTokensRes\022X\n\ngetMarkets\022$.i",
+      "o.lightcone.data.dex.GetMarketsReq\032$.io." +
+      "lightcone.data.dex.GetMarketsRes\022^\n\016getM" +
+      "arketFills\022(.io.lightcone.data.dex.GetMa" +
+      "rketFillsReq\032\".io.lightcone.data.dex.Get" +
+      "FillsRes\022X\n\014getOrderBook\022&.io.lightcone." +
+      "data.dex.GetOrderBookReq\032 .io.lightcone." +
+      "data.dex.OrderBook\022R\n\ngetCandles\022$.io.li" +
+      "ghtcone.data.dex.GetCandlesReq\032\036.io.ligh" +
+      "tcone.data.dex.Candles\022J\n\ngetAccount\022\034.g" +
+      "oogle.protobuf.StringValue\032\036.io.lightcon",
+      "e.data.dex.Account\022a\n\rgetUserOrders\022\'.io" +
+      ".lightcone.data.dex.GetUserOrdersReq\032\'.i" +
+      "o.lightcone.data.dex.GetUserOrdersRes\022Z\n" +
+      "\014getUserFills\022&.io.lightcone.data.dex.Ge" +
+      "tUserFillsReq\032\".io.lightcone.data.dex.Ge" +
+      "tFillsRes\022p\n\020getUserTransfers\022-.io.light" +
+      "cone.data.dex.GetUserTransactionsReq\032-.i" +
+      "o.lightcone.data.dex.GetUserTransactions" +
+      "Res\022X\n\016getNextOrderId\022(.io.lightcone.dat" +
+      "a.dex.GetNextOrderIdReq\032\034.google.protobu",
+      "f.UInt32Value\022F\n\010getNonce\022\034.google.proto" +
+      "buf.UInt32Value\032\034.google.protobuf.UInt32" +
+      "Value\022T\n\013submitOrder\022\036.io.lightcone.data" +
+      ".order.Order\032%.io.lightcone.data.dex.Sub" +
+      "mitOrderRes\022g\n\013cancelOrder\0221.io.lightcon" +
+      "e.data.dex.SimpleOrderCancellationReq\032%." +
+      "io.lightcone.data.dex.CancelOrderRes\022v\n\027" +
+      "submitOrderCancellation\0224.io.lightcone.d" +
+      "ata.requests.OrderCancellationRequest\032%." +
+      "io.lightcone.data.dex.CancelOrderRes\022\201\001\n",
+      "\030submitOffchainWithdrawal\0225.io.lightcone" +
+      ".data.requests.OffchainWithdrawalRequest" +
+      "\032..io.lightcone.data.dex.OffchainWithdra" +
+      "walalResB\002P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -501,7 +504,7 @@ public final class ServiceDex {
     internal_static_io_lightcone_data_dex_UserTransaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_lightcone_data_dex_UserTransaction_descriptor,
-        new java.lang.String[] { "RequestId", "AccountId", "TokenId", "Amount", "SubmittedAt", "UpdatedAt", "Status", "TransactionType", });
+        new java.lang.String[] { "RequestId", "AccountId", "TokenId", "Amount", "SubmittedAt", "UpdatedAt", "TxStatus", "TxType", "TxHash", });
     internal_static_io_lightcone_data_dex_GetUserFillsReq_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_io_lightcone_data_dex_GetUserFillsReq_fieldAccessorTable = new
