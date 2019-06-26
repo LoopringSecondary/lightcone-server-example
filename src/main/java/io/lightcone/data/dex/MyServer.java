@@ -19,7 +19,13 @@ public class MyServer {
     private final Server server;
 
     public static void main(String[] args) throws Exception {
-        final MyServer server = new MyServer(DEFAULT_PORT);
+        System.out.println("hello gRPC server");
+        MyServer server;
+        if (args.length == 0) {
+            server = new MyServer(DEFAULT_PORT);
+        } else {
+            server = new MyServer(Integer.parseInt(args[0]));
+        }
         server.start();
         server.blockUntilShutdown();
     }
