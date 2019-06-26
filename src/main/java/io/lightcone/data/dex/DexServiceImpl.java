@@ -89,7 +89,9 @@ public class DexServiceImpl implements DexServiceGrpc.DexService {
     @Override
     public void getAccount(StringValue request, StreamObserver<Account> responseObserver) {
         responseObserver.onNext(Account.newBuilder()
-                .setAccountId(AccountID.newBuilder().setValue(1).build())
+                .setAccountId(AccountID.newBuilder()
+                        .setValue(1)
+                        .build())
                 .build());
         responseObserver.onCompleted();
     }
@@ -122,7 +124,7 @@ public class DexServiceImpl implements DexServiceGrpc.DexService {
     @Override
     public void getNextOrderId(GetNextOrderIdReq request, StreamObserver<UInt32Value> responseObserver) {
         responseObserver.onNext(UInt32Value.newBuilder()
-                .setValue(0)
+                .setValue(10)
                 .build());
         responseObserver.onCompleted();
     }

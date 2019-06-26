@@ -26,7 +26,7 @@ public class MyServer {
     /**
      * Create a server listening on {@code port} using {@code featureFile} database.
      */
-    private MyServer(int port) {
+    public MyServer(int port) {
         this.port = port;
         this.server = NettyServerBuilder.forPort(port)
                 .addService(DexServiceGrpc.bindService(new DexServiceImpl()))
@@ -36,7 +36,7 @@ public class MyServer {
     /**
      * Start serving requests.
      */
-    private void start() throws IOException {
+    public void start() throws IOException {
         server.start();
         log.debug("Server started, listening on {}", port);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
@@ -50,7 +50,7 @@ public class MyServer {
     /**
      * Stop serving requests and shutdown resources.
      */
-    private void stop() {
+    public void stop() {
         if (server != null) {
             server.shutdown();
         }
